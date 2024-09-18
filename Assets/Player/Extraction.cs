@@ -44,7 +44,7 @@ public class Extraction : MonoBehaviour
         else
         {
             pickaxeInHand = true;
-            pickaxe.SetActive(true); //psuh
+            pickaxe.SetActive(true); 
         }
     }
 }
