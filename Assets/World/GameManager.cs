@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField]
+    private int xWorldSize, yWorldSize;
+    private WorldCreator gridC;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gridC = gameObject.GetComponent<WorldCreator>();
+        gridC.CreateGrid(xWorldSize, yWorldSize);
     }
 }

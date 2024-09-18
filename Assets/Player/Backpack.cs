@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Backpack : MonoBehaviour
 {
-    private int rock;
-    private int wood;
+    [SerializeField]
+    private int rock, wood;
 
     public void AddResources(string res)
     {
-        Debug.Log(res);
         switch(res)
         {
             case "Rock":
