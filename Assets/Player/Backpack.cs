@@ -7,7 +7,7 @@ public class Backpack : MonoBehaviour
     [SerializeField]
     private int rock, wood;
 
-    public void AddResources(string res)
+    public void AddResources(string res)    //When destroy a material, it's adding to eq
     {
         switch(res)
         {

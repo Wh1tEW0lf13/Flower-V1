@@ -11,11 +11,11 @@ public class Extraction : MonoBehaviour
 
     private void Start()
     {
-        pickaxe.SetActive(false);
+        pickaxe.SetActive(false);   //When game start, pickaxe is hidden
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0)&&res!=null)
+        if(Input.GetMouseButtonDown(0)&&res!=null)  //If resources exist, and we press left mouse botton, function started;
         {
             rock.Mining();
         }
@@ -34,12 +34,12 @@ public class Extraction : MonoBehaviour
     {
         res = null;
     }
-    private void PickaxeDrawOut()
+    private void PickaxeDrawOut()   
     {
         if (pickaxe.activeSelf == true)
         {
             pickaxe.SetActive(false);
-            pickaxeInHand = false;
+            pickaxeInHand = false;  //Resources script knows if pickaxe is in hand
         }
         else
         {

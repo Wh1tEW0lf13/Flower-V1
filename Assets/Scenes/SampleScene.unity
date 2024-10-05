@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 203307271}
-  - component: {fileID: 203307270}
+  - component: {fileID: 203307273}
   - component: {fileID: 203307272}
   m_Layer: 0
   m_Name: World
@@ -137,20 +137,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &203307270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203307269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52a09ae80578f974aa3aae463dadedc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xWorldSize: 50
-  yWorldSize: 50
 --- !u!4 &203307271
 Transform:
   m_ObjectHideFlags: 0
@@ -180,6 +166,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground: {fileID: 2867147728306307605, guid: 081665fecaa1dc149aec4993db0e75ba, type: 3}
   water: {fileID: 83560170267182987, guid: 2b6416444ffd42f4aadae9b357afd5e2, type: 3}
+  resources:
+  - {fileID: 5219180600162470688, guid: c20f3d95925b4a94f98ced7a6578c76f, type: 3}
+  - {fileID: 5219180600162470688, guid: c20f3d95925b4a94f98ced7a6578c76f, type: 3}
+--- !u!114 &203307273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203307269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a09ae80578f974aa3aae463dadedc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xWorldSize: 100
+  yWorldSize: 100
+  riverSize: 5
+  numberOfResources: 10
 --- !u!1 &321565473
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +259,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7114887345103331880, guid: 4d82682c098c9c24bb6703e4c6b320f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -385,6 +390,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6878666457784535570, guid: 320baaed77cb82b419223aade10dc0e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6878666457784535570, guid: 320baaed77cb82b419223aade10dc0e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6878666457784535570, guid: 320baaed77cb82b419223aade10dc0e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.87
       objectReference: {fileID: 0}
@@ -423,6 +436,10 @@ PrefabInstance:
     - target: {fileID: 6878666457784535570, guid: 320baaed77cb82b419223aade10dc0e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907815675757785067, guid: 320baaed77cb82b419223aade10dc0e5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -505,7 +522,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558666198}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
