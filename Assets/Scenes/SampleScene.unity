@@ -168,7 +168,8 @@ MonoBehaviour:
   water: {fileID: 83560170267182987, guid: 2b6416444ffd42f4aadae9b357afd5e2, type: 3}
   resources:
   - {fileID: 5219180600162470688, guid: c20f3d95925b4a94f98ced7a6578c76f, type: 3}
-  - {fileID: 5219180600162470688, guid: c20f3d95925b4a94f98ced7a6578c76f, type: 3}
+  - {fileID: 7611954080939491101, guid: 1bedfb8996367fc4485b8a53c0819709, type: 3}
+  - {fileID: 7847873080868214072, guid: d8099876f3b86f147af338f7c166ef4d, type: 3}
 --- !u!114 &203307273
 MonoBehaviour:
   m_ObjectHideFlags: 0

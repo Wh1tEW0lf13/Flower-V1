@@ -4,7 +4,8 @@ using UnityEngine;
 public class Extraction : MonoBehaviour
 {
     private RockResources rock;
-    private GameObject res; //Mineable resources
+    private TreeResources tree;
+    private string res; //Mineable resources
     [SerializeField]
     private GameObject pickaxe;
     public bool pickaxeInHand = false;
@@ -15,9 +16,21 @@ public class Extraction : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0)&&res!=null)  //If resources exist, and we press left mouse botton, function started;
+        if (Input.GetMouseButtonDown(0) && res.Length==0)  //If resources exist, and we press left mouse botton, function started;
         {
-            rock.Mining();
+            switch(res)
+                {
+                case ("Rock"):
+                    {
+                        rock.Mining();
+                        break;
+                    }
+                case ("Tree"):
+                    {
+                        tree.Mining();
+                        break;
+                    }
+                }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))   //if press 1, pickaxe draw out or pocket;
@@ -27,12 +40,20 @@ public class Extraction : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        res = collision.gameObject;
-        rock = res.GetComponent<RockResources>();
+        if(collision.gameObject.TryGetComponent<RockResources>(out RockResources rRes))
+        {
+            rock = collision.gameObject.GetComponent<RockResources>();
+            res = rock.resName;
+        }
+        else if(collision.gameObject.TryGetComponent<TreeResources>(out TreeResources tRes))
+        {
+            tree = collision.gameObject.GetComponent<TreeResources>();
+            res = tree.resName;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        res = null;
+        res = "";
     }
     private void PickaxeDrawOut()   
     {
