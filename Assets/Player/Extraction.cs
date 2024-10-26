@@ -5,7 +5,7 @@ public class Extraction : MonoBehaviour
 {
     private RockResources rock;
     private TreeResources tree;
-    private string res; //Mineable resources
+    private string res = ""; //Mineable resources
     [SerializeField]
     private GameObject pickaxe;
     public bool pickaxeInHand = false;
@@ -16,7 +16,7 @@ public class Extraction : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && res.Length==0)  //If resources exist, and we press left mouse botton, function started;
+        if (Input.GetMouseButtonDown(0) && res.Length!=0)  //If resources exist, and we press left mouse botton, function started;
         {
             switch(res)
                 {

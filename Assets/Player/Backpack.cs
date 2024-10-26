@@ -16,7 +16,7 @@ public class Backpack : MonoBehaviour
                     rock++;
                     break;
                 }
-            case "Wood":
+            case "Tree":
                 {
                     wood++;
                     break;
