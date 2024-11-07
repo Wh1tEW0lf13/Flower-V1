@@ -9,7 +9,7 @@ public abstract class Mineable : MonoBehaviour
     public float hp, maxHp;
     [SerializeField]
     protected GameObject text, health;
-    private Backpack backpack;
+    //private Backpack backpack;
     public TextMeshPro textMesh;
     protected GameObject player;
     protected Extraction extraction;
@@ -31,7 +31,7 @@ public abstract class Mineable : MonoBehaviour
             healthBar.BarActive();
             player = collision.gameObject;
             playerInfo = collision.GetComponent<PlayerScript>();
-            backpack = player.GetComponent<Backpack>();
+            //backpack = player.GetComponent<Backpack>();
         }
         if (collision.CompareTag("Water") | collision.CompareTag("Mineable"))
         {
@@ -51,7 +51,7 @@ public abstract class Mineable : MonoBehaviour
         healthBar.Border();
         if (hp <= 0)
         {
-            backpack.AddResources(resName);
+            //backpack.AddResources(resName);
             Destroy(transform.parent.gameObject);         
         }
         
